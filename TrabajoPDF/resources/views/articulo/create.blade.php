@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<body style="background-color:#25BEEB;">
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -27,4 +28,5 @@
             </div>
         </div>
     </section>
+</body>
 @endsection
