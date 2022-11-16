@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<body style="background-color:#25BEEB;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -17,7 +18,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('registros.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('registros.create') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -50,11 +51,11 @@
 
                                             <td>
                                                 <form action="{{ route('registros.destroy',$registro->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('registros.show',$registro->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('registros.edit',$registro->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-dark" href="{{ route('registros.show',$registro->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-link"href="{{ route('registros.edit',$registro->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,4 +69,5 @@
             </div>
         </div>
     </div>
+</body>
 @endsection
