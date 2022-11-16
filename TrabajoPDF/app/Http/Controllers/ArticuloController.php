@@ -29,7 +29,8 @@ class ArticuloController extends Controller
     {
         $articulos = Articulo::paginate();
         $pdf = PDF::loadView('articulo.pdf',['articulos'=>$articulos]);
-        return $pdf->stream();
+        //return $pdf->stream();
+        return $pdf->download('__articulos.pdf');
     }
 
     /**
