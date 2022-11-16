@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Articulo;
 use App\Models\Registro;
 use Illuminate\Http\Request;
-
+use PDF;
 /**
  * Class ArticuloController
  * @package App\Http\Controllers
@@ -23,6 +23,17 @@ class ArticuloController extends Controller
 
         return view('articulo.index', compact('articulos'))
             ->with('i', (request()->input('page', 1) - 1) * $articulos->perPage());
+    }
+
+    public function pdf()
+    {
+        $articulos = Articulo::paginate();
+        $pdf = PDF::loadView('articulo.pdf',['articulos'=>$articulos]);
+
+        $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
+       // return view('articulo.pdf', compact('articulos') );
+
     }
 
     /**

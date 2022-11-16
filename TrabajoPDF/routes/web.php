@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('articulos/pdf', [App\Http\Controllers\ArticuloController::class, 'pdf'] )->name('articulos.pdf');
+
 Route::resource('registros',App\Http\Controllers\ RegistroController::class)->middleware('auth');
 Route::resource('articulos',App\Http\Controllers\ ArticuloController::class)->middleware('auth');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
