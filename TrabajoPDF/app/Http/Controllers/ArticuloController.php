@@ -29,11 +29,7 @@ class ArticuloController extends Controller
     {
         $articulos = Articulo::paginate();
         $pdf = PDF::loadView('articulo.pdf',['articulos'=>$articulos]);
-
-        $pdf->loadHTML('<h1>Test</h1>');
         return $pdf->stream();
-       // return view('articulo.pdf', compact('articulos') );
-
     }
 
     /**
